@@ -26,10 +26,10 @@ jobs:
         run: conda install pillow=9.0.1 jpeg=9b
       - name: Check libjepg.dll
         run: ls -l C:\Miniconda\envs\test\Library\bin\libjpeg.dll
-      - name: Dumpbin libjepg.dll
+      - name: Dependencies libjepg.dll
         run: |
-          Invoke-WebRequest https://github.com/Delphier/dumpbin/releases/download/v14.40.33811/dumpbin-14.40.33811-x64.zip -OutFile dumpbin.zip
-          Expand-Archive dumpbin.zip
-          dumpbin\dumpbin.exe /dependents C:\Miniconda\envs\test\Library\bin\libjpeg.dll
+          Invoke-WebRequest https://github.com/lucasg/Dependencies/releases/download/v1.11.1/Dependencies_x64_Release.zip -OutFile Dependencies.zip
+          Expand-Archive Dependencies.zip
+          Dependencies\Dependencies.exe -chain C:\Miniconda\envs\test\Library\bin\libjpeg.dll
       - name: Import Pillow
         run: python -c 'from PIL import Image'

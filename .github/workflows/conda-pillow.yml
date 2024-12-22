@@ -23,7 +23,7 @@ jobs:
       - name: Conda info
         run: conda info
       - name: Install Pillow
-        run: conda install pillow=9.0.1 jpeg=9b libtiff=4.5.0
+        run: conda install pillow=9.0.1 jpeg=9b
       - name: Import Pillow
         run: python -c 'from PIL import Image'
 

@@ -23,7 +23,9 @@ jobs:
       - name: Conda info
         run: conda info
       - name: Install Pillow
-        run: conda install pillow=9.0.1 jpeg=9b=vc9hb90d6ad_1
+        run: conda install pillow=9.0.1 jpeg=9b
+      - name: Check libjepg.dll
+        run: ls -l C:\Miniconda\envs\test\Library\bin\libjpeg.dll
       - name: Import Pillow
         run: python -c 'from PIL import Image'
 

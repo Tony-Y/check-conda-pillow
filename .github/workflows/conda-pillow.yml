@@ -1,0 +1,29 @@
+name: Conda Pillow
+
+on:
+  push:
+    branches: [ "main" ]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+jobs:
+  conda:    
+    runs-on: windows-latest
+    defaults:
+      run:
+        shell: pwsh
+
+    steps:
+      - uses: conda-incubator/setup-miniconda@v3
+        with:
+          auto-update-conda: true
+          python-version: 3.9
+          channels: defaults
+      - name: Conda info
+        run: conda info
+      - name: Install Pillow
+        run: conda install pillow=9.3.0
+      - name: Import Pillow
+        run: python -c 'from PIL import Image'
+

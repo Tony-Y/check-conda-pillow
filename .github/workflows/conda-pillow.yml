@@ -23,7 +23,7 @@ jobs:
       - name: Conda info
         run: conda info
       - name: Install Pillow
-        run: conda install pillow=9.0.1 jpeg=9e
+        run: conda install pillow=9.0.1 jpeg=9d
       - name: Check libjepg.dll
         run: ls -l C:\Miniconda\envs\test\Library\bin\libjpeg.dll
       # - name: Dependencies libjepg.dll
